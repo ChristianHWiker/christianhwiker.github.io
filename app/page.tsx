@@ -61,11 +61,12 @@ export default function Home() {
               <div className="avatar-ring absolute inset-0 rounded-full p-[3px]">
                 <div className="h-full w-full rounded-full bg-[#0a0a0f]" />
               </div>
-              {/* Photo placeholder */}
               <div className="absolute inset-[3px] overflow-hidden rounded-full">
-                <div className="flex h-full w-full items-center justify-center bg-zinc-900 text-zinc-500">
-                  Photo
-                </div>
+                <img
+                  src="/profile.jpg"
+                  alt="Christian Hagen Wiker"
+                  className="h-full w-full object-cover object-[center_75%]"
+                />
               </div>
             </div>
           </FadeIn>
