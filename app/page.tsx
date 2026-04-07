@@ -1,6 +1,9 @@
+import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
 import SmoothLink from "@/components/SmoothLink";
+import TechOrbit from "@/components/TechOrbit";
+import InteractiveTerminal from "@/components/InteractiveTerminal";
 import { projects } from "@/data/projects";
 
 export default function Home() {
@@ -62,13 +65,69 @@ export default function Home() {
                 <div className="h-full w-full rounded-full bg-[#0a0a0f]" />
               </div>
               <div className="absolute inset-[3px] overflow-hidden rounded-full">
-                <img
+                <Image
                   src="/profile.jpg"
                   alt="Christian Hagen Wiker"
+                  width={256}
+                  height={256}
                   className="h-full w-full object-cover object-[center_75%]"
+                  priority
                 />
               </div>
             </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* Bento Grid Section */}
+      <section id="stack" className="container mx-auto max-w-6xl px-6">
+        <FadeIn>
+          <div className="mb-12 flex items-center gap-4">
+            <h2 className="text-3xl font-bold tracking-tight">At a Glance</h2>
+            <div className="h-px flex-1 bg-gradient-to-r from-accent-1/40 to-transparent" />
+          </div>
+        </FadeIn>
+
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {/* Tech Orbit — large cell */}
+          <FadeIn className="md:col-span-2 lg:col-span-2 lg:row-span-2">
+            <div className="flex h-full items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm p-4">
+              <TechOrbit />
+            </div>
+          </FadeIn>
+
+          {/* Status card */}
+          <FadeIn>
+            <div className="group flex h-full flex-col justify-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm p-6 transition-all hover:border-accent-1/40">
+              <div className="flex items-center gap-2">
+                <span className="relative flex h-2.5 w-2.5">
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+                  <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Currently</span>
+              </div>
+              <p className="text-lg font-bold text-zinc-100">Developer at Pelias</p>
+              <p className="text-sm text-zinc-400">Building internal tools, services, and data pipelines in C# and .NET</p>
+            </div>
+          </FadeIn>
+
+          {/* Location card */}
+          <FadeIn>
+            <div className="group flex h-full flex-col justify-center gap-3 rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm p-6 transition-all hover:border-accent-4/40">
+              <div className="flex items-center gap-2 text-accent-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-5 w-5">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z" />
+                </svg>
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Location</span>
+              </div>
+              <p className="text-lg font-bold text-zinc-100">Elverum, Norway</p>
+            </div>
+          </FadeIn>
+
+          {/* Terminal — full width */}
+          <FadeIn className="md:col-span-2 lg:col-span-3">
+            <InteractiveTerminal />
           </FadeIn>
         </div>
       </section>

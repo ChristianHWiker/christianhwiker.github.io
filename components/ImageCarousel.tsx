@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback } from "react";
+import Image from "next/image";
 
 interface Slide {
   src: string;
@@ -28,9 +29,11 @@ export default function ImageCarousel({ slides }: { slides: Slide[] }) {
       >
         {slides.map((slide, i) => (
           <div key={i} className="w-full flex-shrink-0">
-            <img
+            <Image
               src={slide.src}
               alt={slide.alt}
+              width={1200}
+              height={675}
               className="w-full object-contain"
               draggable={false}
             />

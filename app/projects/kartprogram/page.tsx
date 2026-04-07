@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import FadeIn from "@/components/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Blazor Map Application — Christian Hagen Wiker",
+  description:
+    "A multi-tenant map and trend tool built in Blazor for Pelias. Visualize maps, track trend data, and link everything to work orders for daily operations.",
+};
 
 const slides = [
   { src: "/images/kartprogram/kartprogram1.png", alt: "Main map interface showing Oslo area with drawing tools" },
@@ -36,6 +44,14 @@ export default function KartprogramPage() {
               {tag}
             </span>
           ))}
+        </div>
+      </FadeIn>
+
+      <FadeIn>
+        <div className="mt-12 grid grid-cols-3 gap-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8">
+          <AnimatedCounter end={4} label="User roles" />
+          <AnimatedCounter end={2} label="Map types (indoor + outdoor)" />
+          <AnimatedCounter end={1} label="Prototype to convince mgmt" />
         </div>
       </FadeIn>
 

@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ImageCarousel from "@/components/ImageCarousel";
+import AnimatedCounter from "@/components/AnimatedCounter";
 import FadeIn from "@/components/FadeIn";
+
+export const metadata: Metadata = {
+  title: "Email Worker Service — Christian Hagen Wiker",
+  description:
+    "A standalone C# email engine that eliminated daily server hangs by offloading email generation into an independent scheduled service with a full web dashboard.",
+};
 
 const slides = [
   { src: "/images/email-worker/ewdash.png", alt: "Dashboard showing queue statistics and origin status" },
@@ -43,6 +51,14 @@ export default function EmailWorkerPage() {
               {tag}
             </span>
           ))}
+        </div>
+      </FadeIn>
+
+      <FadeIn>
+        <div className="mt-12 grid grid-cols-3 gap-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8">
+          <AnimatedCounter end={7000} suffix="+" label="Emails processed" />
+          <AnimatedCounter end={9} label="Email origins" />
+          <AnimatedCounter end={0} label="Daily downtime (hrs)" />
         </div>
       </FadeIn>
 

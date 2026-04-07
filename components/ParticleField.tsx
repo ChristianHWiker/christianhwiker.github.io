@@ -30,7 +30,10 @@ export default function ParticleField() {
 
     function initParticles() {
       particles = [];
-      const count = Math.floor((canvas!.width * canvas!.height) / 18000);
+      const count = Math.min(
+        60,
+        Math.floor((canvas!.width * canvas!.height) / 25000),
+      );
       for (let i = 0; i < count; i++) {
         particles.push({
           x: Math.random() * canvas!.width,
@@ -62,18 +65,21 @@ export default function ParticleField() {
         ctx!.fill();
       }
 
-      // Draw connections
+      // Draw connections (skip sqrt, compare squared distances)
+      const maxDist = 100;
+      const maxDistSq = maxDist * maxDist;
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
+          const distSq = dx * dx + dy * dy;
 
-          if (dist < 100) {
+          if (distSq < maxDistSq) {
+            const dist = Math.sqrt(distSq);
             ctx!.beginPath();
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);
-            ctx!.strokeStyle = `hsla(260, 80%, 70%, ${0.12 * (1 - dist / 100)})`;
+            ctx!.strokeStyle = `hsla(260, 80%, 70%, ${0.12 * (1 - dist / maxDist)})`;
             ctx!.lineWidth = 0.5;
             ctx!.stroke();
           }

@@ -14,6 +14,14 @@ export default function ProjectCard({ project }: { project: Project }) {
         <p className="mt-3 text-sm leading-relaxed text-zinc-400">
           {project.description}
         </p>
+        {project.impact && (
+          <div className="mt-4 flex items-center gap-2 rounded-lg border border-accent-1/20 bg-accent-1/5 px-3 py-2">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5 flex-shrink-0 text-accent-4">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
+            </svg>
+            <span className="text-xs font-medium text-accent-4">{project.impact}</span>
+          </div>
+        )}
         <div className="mt-4 flex flex-wrap gap-2">
           {project.tags.map((tag) => (
             <span

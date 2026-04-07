@@ -25,6 +25,11 @@ export default function Navbar() {
             </a>
           </li>
           <li>
+            <a href="#stack" onClick={(e) => smoothScroll(e, "#stack")} className="transition-colors hover:text-white">
+              Stack
+            </a>
+          </li>
+          <li>
             <a href="#projects" onClick={(e) => smoothScroll(e, "#projects")} className="transition-colors hover:text-white">
               Projects
             </a>
