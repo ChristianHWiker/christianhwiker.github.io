@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
@@ -24,6 +25,17 @@ export default function ProjectCard({ project }: { project: Project }) {
           ))}
         </div>
         <div className="mt-auto flex items-center gap-4 pt-6">
+          {project.detailPage && (
+            <Link
+              href={project.detailPage}
+              className="group/link flex items-center gap-1 text-sm font-semibold text-accent-1 transition-colors hover:text-accent-3"
+            >
+              Details
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+              </svg>
+            </Link>
+          )}
           {project.link && (
             <a
               href={project.link}

@@ -6,6 +6,7 @@ export interface Project {
   link?: string;
   github?: string;
   githubRepos?: { name: string; url: string }[];
+  detailPage?: string;
 }
 
 export const projects: Project[] = [
@@ -15,18 +16,15 @@ export const projects: Project[] = [
     description:
       "A standalone email engine that offloads a web server by moving email generation from legacy ASP Classic code into a modern C# service. Runs as a scheduled task with config-driven origins. Includes a web dashboard for statistics, searchable queue, and manual re-queuing. Eliminated over an hour of daily server hangs.",
     tags: ["C#", "ASP.NET Core", "MSSQL", "Automation"],
-    githubRepos: [
-      { name: "Engine", url: "https://github.com/ChristianHWiker/EmailWorker" },
-      { name: "Web UI", url: "https://github.com/ChristianHWiker/EmailWorker.Web" },
-    ],
+    detailPage: "/projects/email-worker",
   },
   {
     id: "2",
     title: "Blazor Map Application",
     description:
-      "A map program prototype built in Blazor Web App for Pelias. Originally planned to be outsourced, but after seeing the prototype the company decided to keep development in-house.",
+      "A map and trend tool built in Blazor for Pelias. Lets users visualize and edit maps, track trend data on map objects, and link everything to orders for day-to-day operations. Originally planned to be outsourced, but after seeing the prototype the company decided to keep development in-house.",
     tags: ["C#", "Blazor", "Web App", "Maps"],
-    github: "https://github.com/ChristianHWiker/Kartprogram-Public",
+    detailPage: "/projects/kartprogram",
   },
   {
     id: "3",
