@@ -5,9 +5,11 @@ import { useEffect, useRef } from "react";
 export default function FadeIn({
   children,
   className = "",
+  id,
 }: {
   children: React.ReactNode;
   className?: string;
+  id?: string;
 }) {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -30,7 +32,7 @@ export default function FadeIn({
   }, []);
 
   return (
-    <div ref={ref} className={`fade-section ${className}`}>
+    <div ref={ref} id={id} className={`fade-section ${className}`}>
       {children}
     </div>
   );

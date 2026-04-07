@@ -1,0 +1,43 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(where node:*)",
+      "Bash(npx next:*)",
+      "Bash(find /c/Users/chwi/source/repos/Portfolio/my-portfolio/node_modules/next/dist/docs -type f -name *.md)",
+      "Bash(xargs grep:*)",
+      "Read(//c/Users/chwi/Downloads//**)",
+      "Read(//c/Users/chwi/Downloads/\" 2>/dev/**)",
+      "Bash(ls:*)",
+      "Bash(npx kill-port:*)",
+      "Bash(taskkill //F //FI \"WINDOWTITLE eq next*\")",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(npx serve:*)",
+      "Bash(taskkill //PID 16508 //F)",
+      "Bash(python -m http.server 3000 --directory /c/Users/chwi/source/repos/Portfolio/my-portfolio/out)",
+      "Bash(curl:*)",
+      "Bash(tasklist)",
+      "Bash(netstat -ano)",
+      "Bash(taskkill //F //PID 2384)",
+      "Bash(taskkill //F //PID 20424)",
+      "Bash(npm run:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:simpleicons.org)",
+      "Bash(npm info:*)",
+      "Bash(npx -y simple-icons-json-file@latest)",
+      "Bash(npm pack:*)",
+      "Bash(grep -oP 'slug:\"csharp\".{0,500}')",
+      "Bash(grep -oP 'slug:\"microsoftsqlserver\".{0,500}')",
+      "Bash(grep -oP 'slug:\"csharp\".{0,3000}')",
+      "Bash(grep -oP 'slug:\"microsoftsqlserver\".{0,3000}')",
+      "Bash(grep -oP 'siCsharp=\\\\{.+?\\(?=,si[A-Z]\\)')",
+      "Bash(grep -oP 'siBlazor=\\\\{.+?\\(?=,si[A-Z]\\)')",
+      "Bash(grep -oP 'siMicrosoftsqlserver=\\\\{.+?\\(?=,si[A-Z]\\)')",
+      "Bash(grep -oP 'siDotnet=\\\\{.+?\\(?=,si[A-Z]\\)')",
+      "Bash(grep -oP 'siReact=\\\\{.+?\\(?=,si[A-Z]\\)')",
+      "Bash(node:*)",
+      "Bash(grep -oP 'slug:\"microsoftsqlserver\".{0,15000}?hex:\"\\([A-Fa-f0-9]+\\)\"')"
+    ]
+  }
+}

@@ -1,8 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface OrbitItem {
+  id: string;
   name: string;
   icon: string;
 }
@@ -21,10 +23,11 @@ const rings: Ring[] = [
     radius: 85,
     duration: 35,
     items: [
-      { name: "C#", icon: "/icons/csharp.svg" },
-      { name: ".NET", icon: "/icons/dotnet.svg" },
-      { name: "Blazor", icon: "/icons/blazor.svg" },
-      { name: "ASP.NET", icon: "/icons/aspnet.svg" },
+      { id: "csharp", name: "C#", icon: "/icons/csharp.svg" },
+      { id: "dotnet", name: ".NET", icon: "/icons/dotnet.svg" },
+      { id: "blazor", name: "Blazor", icon: "/icons/blazor.svg" },
+      { id: "aspnet", name: "ASP.NET", icon: "/icons/aspnet.svg" },
+      { id: "cpp", name: "C++", icon: "/icons/cpp.svg" },
     ],
   },
   {
@@ -33,10 +36,10 @@ const rings: Ring[] = [
     duration: 45,
     reverse: true,
     items: [
-      { name: "TypeScript", icon: "/icons/typescript.svg" },
-      { name: "React", icon: "/icons/react.svg" },
-      { name: "Next.js", icon: "/icons/nextjs.svg" },
-      { name: "JavaScript", icon: "/icons/javascript.svg" },
+      { id: "typescript", name: "TypeScript", icon: "/icons/typescript.svg" },
+      { id: "react", name: "React", icon: "/icons/react.svg" },
+      { id: "nextjs", name: "Next.js", icon: "/icons/nextjs.svg" },
+      { id: "javascript", name: "JavaScript", icon: "/icons/javascript.svg" },
     ],
   },
   {
@@ -44,27 +47,40 @@ const rings: Ring[] = [
     radius: 220,
     duration: 55,
     items: [
-      { name: "SQL Server", icon: "/icons/sqlserver.svg" },
-      { name: "Node.js", icon: "/icons/nodejs.svg" },
-      { name: "Git", icon: "/icons/git.svg" },
-      { name: "Dapper", icon: "/icons/dapper.svg" },
+      { id: "sqlserver", name: "SQL Server", icon: "/icons/sqlserver.svg" },
+      { id: "nodejs", name: "Node.js", icon: "/icons/nodejs.svg" },
+      { id: "git", name: "Git", icon: "/icons/git.svg" },
+      { id: "dapper", name: "Dapper", icon: "/icons/dapper.svg" },
+    ],
+  },
+  {
+    label: "Game Dev",
+    radius: 285,
+    duration: 65,
+    reverse: true,
+    items: [
+      { id: "unity", name: "Unity", icon: "/icons/unity.svg" },
+      { id: "unreal", name: "Unreal", icon: "/icons/unreal.svg" },
     ],
   },
 ];
 
 export default function TechOrbit() {
   return (
-    <div className="relative mx-auto h-[280px] w-[280px] sm:h-[400px] sm:w-[400px] md:h-[480px] md:w-[480px]">
+    <div className="relative mx-auto h-[320px] w-[320px] sm:h-[440px] sm:w-[440px] md:h-[600px] md:w-[600px]">
       {/* Center glow */}
       <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 h-24 w-24 rounded-full bg-accent-1/10 blur-[40px]" />
 
       {/* Center label */}
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
-        <div className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-sm sm:h-16 sm:w-16">
+        <Link
+          href="/stack"
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-sm transition-all hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] sm:h-16 sm:w-16"
+        >
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 sm:text-xs">
             Stack
           </span>
-        </div>
+        </Link>
       </div>
 
       {/* Ring track lines */}
@@ -109,7 +125,10 @@ export default function TechOrbit() {
                     animation: `orbit-spin ${ring.duration}s linear infinite${ring.reverse ? "" : " reverse"}`,
                   }}
                 >
-                  <div className="group relative flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] sm:h-10 sm:w-10 sm:rounded-xl">
+                  <Link
+                    href={`/stack#${item.id}`}
+                    className="group relative flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] sm:h-10 sm:w-10 sm:rounded-xl"
+                  >
                     <Image
                       src={item.icon}
                       alt={item.name}
@@ -117,7 +136,7 @@ export default function TechOrbit() {
                       height={20}
                       className="h-4 w-4 opacity-80 transition-opacity group-hover:opacity-100 sm:h-5 sm:w-5"
                     />
-                  </div>
+                  </Link>
                   <span className="text-[8px] font-medium text-zinc-500 sm:text-[10px]">
                     {item.name}
                   </span>
