@@ -5,6 +5,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ParticleField from "@/components/ParticleField";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +33,14 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-[#0a0a0f] text-zinc-100 grid-bg">
-        <ParticleField />
-        <Navbar />
-        <main className="relative z-10 flex-1">
-          <ViewTransition>{children}</ViewTransition>
-        </main>
-        <Footer />
+        <ThemeProvider>
+          <ParticleField />
+          <Navbar />
+          <main className="relative z-10 flex-1">
+            <ViewTransition>{children}</ViewTransition>
+          </main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

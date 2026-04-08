@@ -4,10 +4,9 @@ export default function SmoothLink({
   href,
   className,
   children,
-}: {
+  ...rest
+}: React.AnchorHTMLAttributes<HTMLAnchorElement> & {
   href: string;
-  className?: string;
-  children: React.ReactNode;
 }) {
   function handleClick(e: React.MouseEvent<HTMLAnchorElement>) {
     e.preventDefault();
@@ -15,7 +14,7 @@ export default function SmoothLink({
   }
 
   return (
-    <a href={href} onClick={handleClick} className={className}>
+    <a href={href} onClick={handleClick} className={className} {...rest}>
       {children}
     </a>
   );

@@ -61,7 +61,7 @@ export default function TechStack() {
           <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
             {category.items.map((tech, i) => (
               <FadeIn key={tech.name} className={`delay-${i}`}>
-                <div className="group flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-3 transition-all duration-300 hover:border-accent-1/50 hover:bg-zinc-900/80 hover:shadow-[0_0_20px_rgba(99,102,241,0.08)]">
+                <div className="group flex items-center gap-3 rounded-xl border border-zinc-800 bg-zinc-900/50 px-4 py-3 transition-all duration-300 hover:border-accent-1/50 hover:bg-zinc-900/80 hover:shadow-[0_0_20px_rgba(var(--accent-1-rgb),0.08)]">
                   <Image
                     src={tech.icon}
                     alt={tech.name}

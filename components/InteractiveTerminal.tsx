@@ -205,7 +205,7 @@ export default function InteractiveTerminal() {
 
   return (
     <div
-      className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/80 backdrop-blur-md shadow-[0_0_60px_rgba(99,102,241,0.06)] transition-all hover:border-zinc-700"
+      className="group relative overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/80 backdrop-blur-md shadow-[0_0_60px_rgba(var(--accent-1-rgb),0.06)] transition-all hover:border-zinc-700"
       onClick={() => inputRef.current?.focus()}
     >
       {/* Title bar */}
@@ -224,7 +224,7 @@ export default function InteractiveTerminal() {
       <div ref={scrollRef} className="h-72 overflow-y-auto p-4 font-mono text-sm leading-relaxed scrollbar-thin">
         {/* Output lines */}
         {lines.map((line, i) => (
-          <div key={i} className={`whitespace-pre-wrap ${colorFor(line.type)}`}>
+          <div key={i} className={`whitespace-pre-wrap ${colorFor(line.type)}`} {...(line.type === "accent" ? { "data-accent": "" } : {})}>
             {line.text || "\u00A0"}
           </div>
         ))}
@@ -249,6 +249,7 @@ export default function InteractiveTerminal() {
             {/* Custom blinking cursor */}
             <span
               className="pointer-events-none absolute top-0 text-accent-1 animate-pulse"
+              data-accent
               style={{ left: `${input.length}ch` }}
             >
               &#9608;

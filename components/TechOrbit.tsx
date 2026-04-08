@@ -75,7 +75,7 @@ export default function TechOrbit() {
       <div className="absolute left-1/2 top-1/2 z-10 -translate-x-1/2 -translate-y-1/2 text-center">
         <Link
           href="/stack"
-          className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-sm transition-all hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] sm:h-16 sm:w-16"
+          className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-sm transition-all hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(var(--accent-1-rgb),0.15)] sm:h-16 sm:w-16"
         >
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 sm:text-xs">
             Stack
@@ -127,7 +127,7 @@ export default function TechOrbit() {
                 >
                   <Link
                     href={`/stack#${item.id}`}
-                    className="group relative flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(99,102,241,0.15)] sm:h-10 sm:w-10 sm:rounded-xl"
+                    className="group relative flex h-8 w-8 items-center justify-center rounded-lg border border-zinc-800 bg-zinc-900/80 backdrop-blur-sm transition-all duration-300 hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(var(--accent-1-rgb),0.15)] sm:h-10 sm:w-10 sm:rounded-xl"
                   >
                     <Image
                       src={item.icon}

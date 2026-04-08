@@ -1,9 +1,11 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { useTheme } from "./ThemeProvider";
 
 export default function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const { theme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -11,6 +13,10 @@ export default function ParticleField() {
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
+
+    const hue1 = theme.particleHue1;
+    const hue2 = theme.particleHue2;
+    const midHue = Math.round((hue1 + hue2) / 2);
 
     let animationId: number;
     let particles: {
@@ -42,7 +48,7 @@ export default function ParticleField() {
           vy: (Math.random() - 0.5) * 0.3,
           size: Math.random() * 1.5 + 0.5,
           opacity: Math.random() * 0.5 + 0.3,
-          hue: Math.random() > 0.5 ? 240 : 280,
+          hue: Math.random() > 0.5 ? hue1 : hue2,
         });
       }
     }
@@ -79,7 +85,7 @@ export default function ParticleField() {
             ctx!.beginPath();
             ctx!.moveTo(particles[i].x, particles[i].y);
             ctx!.lineTo(particles[j].x, particles[j].y);
-            ctx!.strokeStyle = `hsla(260, 80%, 70%, ${0.12 * (1 - dist / maxDist)})`;
+            ctx!.strokeStyle = `hsla(${midHue}, 80%, 70%, ${0.12 * (1 - dist / maxDist)})`;
             ctx!.lineWidth = 0.5;
             ctx!.stroke();
           }
@@ -102,7 +108,7 @@ export default function ParticleField() {
       cancelAnimationFrame(animationId);
       window.removeEventListener("resize", resize);
     };
-  }, []);
+  }, [theme]);
 
   return (
     <canvas

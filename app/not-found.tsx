@@ -18,7 +18,8 @@ export default function NotFound() {
       </p>
       <Link
         href="/"
-        className="mt-8 rounded-full bg-gradient-to-r from-accent-1 to-accent-3 px-8 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(99,102,241,0.3)]"
+        className="mt-8 rounded-full bg-gradient-to-r from-accent-1 to-accent-3 px-8 py-3 text-sm font-semibold text-white transition-transform hover:-translate-y-0.5 hover:shadow-[0_8px_30px_rgba(var(--accent-1-rgb),0.3)]"
+        data-accent
       >
         Back to portfolio
       </Link>

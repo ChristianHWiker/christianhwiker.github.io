@@ -3,9 +3,9 @@ import { Project } from "@/data/projects";
 
 export default function ProjectCard({ project }: { project: Project }) {
   return (
-    <div className="card-glow group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:bg-zinc-900/80 hover:shadow-[0_8px_40px_rgba(99,102,241,0.08)]">
+    <div className="card-glow group flex h-full flex-col overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/50 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1 hover:bg-zinc-900/80 hover:shadow-[0_8px_40px_rgba(var(--accent-1-rgb),0.08)]">
       {/* Gradient accent bar */}
-      <div className="h-1 w-full bg-gradient-to-r from-accent-1 via-accent-3 to-accent-4 opacity-60 transition-opacity group-hover:opacity-100" />
+      <div className="h-1 w-full bg-gradient-to-r from-accent-1 via-accent-3 to-accent-4 opacity-60 transition-opacity group-hover:opacity-100" data-accent />
 
       <div className="flex flex-1 flex-col p-6">
         <h3 className="text-xl font-bold tracking-tight text-zinc-50">
@@ -15,7 +15,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           {project.description}
         </p>
         {project.impact && (
-          <div className="mt-4 flex items-center gap-2 rounded-lg border border-accent-1/20 bg-accent-1/5 px-3 py-2">
+          <div className="mt-4 flex items-center gap-2 rounded-lg border border-accent-1/20 bg-accent-1/5 px-3 py-2" data-accent>
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5 flex-shrink-0 text-accent-4">
               <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" />
             </svg>
@@ -37,6 +37,7 @@ export default function ProjectCard({ project }: { project: Project }) {
             <Link
               href={project.detailPage}
               className="group/link flex items-center gap-1 text-sm font-semibold text-accent-1 transition-colors hover:text-accent-3"
+              data-accent
             >
               Details
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5">
@@ -50,6 +51,7 @@ export default function ProjectCard({ project }: { project: Project }) {
               target="_blank"
               rel="noopener noreferrer"
               className="group/link flex items-center gap-1 text-sm font-semibold text-accent-1 transition-colors hover:text-accent-3"
+              data-accent
             >
               Live Demo
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="h-3.5 w-3.5 transition-transform group-hover/link:translate-x-0.5">

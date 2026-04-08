@@ -1,5 +1,27 @@
 @import "tailwindcss";
 
+/* ── Register accent vars as <color> so they can be transitioned ── */
+@property --accent-1 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #6366f1;
+}
+@property --accent-2 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #8b5cf6;
+}
+@property --accent-3 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #a855f7;
+}
+@property --accent-4 {
+  syntax: '<color>';
+  inherits: true;
+  initial-value: #06b6d4;
+}
+
 :root {
   --background: #0a0a0f;
   --foreground: #ededed;
@@ -7,6 +29,12 @@
   --accent-2: #8b5cf6;
   --accent-3: #a855f7;
   --accent-4: #06b6d4;
+  --accent-1-rgb: 99, 102, 241;
+  --accent-2-rgb: 139, 92, 246;
+  --accent-3-rgb: 168, 85, 247;
+  --accent-4-rgb: 6, 182, 212;
+  --particle-hue-1: 240;
+  --particle-hue-2: 280;
   --orbit-scale: 0.58;
 }
 
@@ -90,7 +118,7 @@ body {
 
 /* ── Utility classes ── */
 .animate-gradient-text {
-  background: linear-gradient(135deg, #6366f1, #8b5cf6, #a855f7, #06b6d4, #6366f1);
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2), var(--accent-3), var(--accent-4), var(--accent-1));
   background-size: 300% 300%;
   animation: text-gradient 6s ease infinite;
   -webkit-background-clip: text;
@@ -102,7 +130,7 @@ body {
   background: linear-gradient(
     90deg,
     transparent 0%,
-    rgba(99, 102, 241, 0.08) 50%,
+    rgba(var(--accent-1-rgb), 0.08) 50%,
     transparent 100%
   );
   background-size: 200% 100%;
@@ -132,15 +160,15 @@ body {
 }
 
 .hero-gradient {
-  background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(99, 102, 241, 0.15), transparent),
-              radial-gradient(ellipse 60% 40% at 80% 50%, rgba(168, 85, 247, 0.1), transparent),
-              radial-gradient(ellipse 50% 50% at 20% 80%, rgba(6, 182, 212, 0.08), transparent);
+  background: radial-gradient(ellipse 80% 60% at 50% -20%, rgba(var(--accent-1-rgb), 0.15), transparent),
+              radial-gradient(ellipse 60% 40% at 80% 50%, rgba(var(--accent-3-rgb), 0.1), transparent),
+              radial-gradient(ellipse 50% 50% at 20% 80%, rgba(var(--accent-4-rgb), 0.08), transparent);
 }
 
 .grid-bg {
   background-image:
-    linear-gradient(rgba(99, 102, 241, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(99, 102, 241, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(var(--accent-1-rgb), 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--accent-1-rgb), 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
 }
 
@@ -178,7 +206,7 @@ body {
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.3);
+  box-shadow: 0 8px 30px rgba(var(--accent-1-rgb), 0.3);
 }
 
 .btn-primary:hover::after {
@@ -197,7 +225,7 @@ body {
 .btn-outline:hover {
   transform: translateY(-2px);
   border-color: var(--accent-1);
-  box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+  box-shadow: 0 8px 30px rgba(var(--accent-1-rgb), 0.15);
 }
 
 /* ── Avatar ring animation ── */
@@ -222,8 +250,8 @@ body {
 }
 
 .tag-pill:hover {
-  background: rgba(99, 102, 241, 0.15);
-  color: #a5b4fc;
+  background: rgba(var(--accent-1-rgb), 0.15);
+  color: var(--accent-1);
   transform: translateY(-1px);
 }
 
@@ -235,11 +263,27 @@ body {
   background: transparent;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb {
-  background: rgba(99, 102, 241, 0.2);
+  background: rgba(var(--accent-1-rgb), 0.2);
   border-radius: 3px;
 }
 .scrollbar-thin::-webkit-scrollbar-thumb:hover {
-  background: rgba(99, 102, 241, 0.4);
+  background: rgba(var(--accent-1-rgb), 0.4);
+}
+
+/* ── Theme wave transition ── */
+[data-accent].wave-transitioning {
+  transition: --accent-1 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              --accent-2 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              --accent-3 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              --accent-4 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              background-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              background 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              fill 500ms cubic-bezier(0.22, 1, 0.36, 1),
+              stroke 500ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: --accent-1, --accent-2, --accent-3, --accent-4;
 }
 
 /* ── Smooth scroll ── */

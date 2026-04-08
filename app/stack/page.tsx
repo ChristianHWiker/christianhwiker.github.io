@@ -168,7 +168,7 @@ export default function StackPage() {
               <h2 className="text-sm font-semibold uppercase tracking-widest text-zinc-500">
                 {category}
               </h2>
-              <div className="h-px flex-1 bg-gradient-to-r from-accent-1/30 to-transparent" />
+              <div className="h-px flex-1 bg-gradient-to-r from-accent-1/30 to-transparent" data-accent />
             </div>
           </FadeIn>
 
@@ -177,8 +177,8 @@ export default function StackPage() {
               .filter((t) => t.category === category)
               .map((tech) => (
                 <FadeIn key={tech.id} id={tech.id}>
-                  <div className="group flex h-full gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent-1/40 hover:shadow-[0_0_30px_rgba(99,102,241,0.06)]">
-                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/80 transition-all group-hover:border-accent-1/50 group-hover:shadow-[0_0_15px_rgba(99,102,241,0.1)]">
+                  <div className="group flex h-full gap-4 rounded-2xl border border-zinc-800 bg-zinc-900/40 p-6 backdrop-blur-sm transition-all duration-300 hover:border-accent-1/40 hover:shadow-[0_0_30px_rgba(var(--accent-1-rgb),0.06)]">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-xl border border-zinc-800 bg-zinc-900/80 transition-all group-hover:border-accent-1/50 group-hover:shadow-[0_0_15px_rgba(var(--accent-1-rgb),0.1)]">
                       <Image
                         src={tech.icon}
                         alt={tech.name}
