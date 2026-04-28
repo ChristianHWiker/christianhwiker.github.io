@@ -214,7 +214,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
       waveElements.current.add(el);
     }
 
-    // Swap global theme — elements still show old colors due to inline overrides
+    // Swap global theme - elements still show old colors due to inline overrides
     applyTheme(newTheme);
     setThemeState(newTheme);
     localStorage.setItem("portfolio-theme", id);
@@ -250,7 +250,7 @@ export default function ThemeProvider({ children }: { children: React.ReactNode 
           if (cursor < sorted.length) {
             waveRafId.current = requestAnimationFrame(tick);
           } else {
-            // All overrides removed — schedule final cleanup after transitions finish
+            // All overrides removed - schedule final cleanup after transitions finish
             cleanupTimeoutId.current = setTimeout(() => {
               for (const el of waveElements.current) {
                 el.classList.remove("wave-transitioning");

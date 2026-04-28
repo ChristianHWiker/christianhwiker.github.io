@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useLanguage } from "./LanguageProvider";
+import { t } from "@/lib/translations";
 
 interface OrbitItem {
   id: string;
@@ -66,6 +68,7 @@ const rings: Ring[] = [
 ];
 
 export default function TechOrbit() {
+  const { lang } = useLanguage();
   return (
     <div className="relative mx-auto h-[320px] w-[320px] sm:h-[440px] sm:w-[440px] md:h-[600px] md:w-[600px]">
       {/* Center glow */}
@@ -78,7 +81,7 @@ export default function TechOrbit() {
           className="flex h-14 w-14 items-center justify-center rounded-full border border-zinc-700 bg-zinc-900/90 backdrop-blur-sm transition-all hover:border-accent-1/60 hover:shadow-[0_0_20px_rgba(var(--accent-1-rgb),0.15)] sm:h-16 sm:w-16"
         >
           <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-400 sm:text-xs">
-            Stack
+            {t.glance.stackCenter[lang]}
           </span>
         </Link>
       </div>

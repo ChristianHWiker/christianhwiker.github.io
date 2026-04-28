@@ -37,7 +37,19 @@
       "Bash(grep -oP 'siDotnet=\\\\{.+?\\(?=,si[A-Z]\\)')",
       "Bash(grep -oP 'siReact=\\\\{.+?\\(?=,si[A-Z]\\)')",
       "Bash(node:*)",
-      "Bash(grep -oP 'slug:\"microsoftsqlserver\".{0,15000}?hex:\"\\([A-Fa-f0-9]+\\)\"')"
+      "Bash(grep -oP 'slug:\"microsoftsqlserver\".{0,15000}?hex:\"\\([A-Fa-f0-9]+\\)\"')",
+      "Bash(cp \"C:/Users/chwi/.vscode/extensions/chadalen.vscode-jetbrains-icon-theme-2.40.0/dist/2023/dark/icons/cs_dark.svg\" \"C:/Users/chwi/source/repos/Portfolio/my-portfolio/public/icons/csharp.svg\")",
+      "Bash(cp \"C:/Users/chwi/.vscode/extensions/chadalen.vscode-jetbrains-icon-theme-2.40.0/dist/2023/dark/icons/cpp_dark.svg\" \"C:/Users/chwi/source/repos/Portfolio/my-portfolio/public/icons/cpp.svg\")",
+      "Bash(cp \"C:/Users/chwi/.vscode/extensions/chadalen.vscode-jetbrains-icon-theme-2.40.0/dist/2023/dark/icons/typeScript_dark.svg\" \"C:/Users/chwi/source/repos/Portfolio/my-portfolio/public/icons/typescript.svg\")",
+      "Bash(cp \"C:/Users/chwi/.vscode/extensions/chadalen.vscode-jetbrains-icon-theme-2.40.0/dist/2023/dark/icons/javaScript_dark.svg\" \"C:/Users/chwi/source/repos/Portfolio/my-portfolio/public/icons/javascript.svg\")",
+      "Bash(cp \"C:/Users/chwi/.vscode/extensions/chadalen.vscode-jetbrains-icon-theme-2.40.0/dist/2023/dark/icons/sql_dark.svg\" \"C:/Users/chwi/source/repos/Portfolio/my-portfolio/public/icons/sqlserver.svg\")",
+      "Bash(npx tsc *)",
+      "Bash(echo \"exit=$?\")",
+      "Bash(npx eslint *)",
+      "Bash(npx next *)",
+      "Bash(echo \"pid=$!\")",
+      "Bash(xargs -I {} curl -s \"http://localhost:3456{}\")",
+      "Bash(pkill -f \"next dev\")"
     ]
   }
 }

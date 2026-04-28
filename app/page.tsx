@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import ProjectCard from "@/components/ProjectCard";
 import FadeIn from "@/components/FadeIn";
@@ -5,8 +7,12 @@ import SmoothLink from "@/components/SmoothLink";
 import TechOrbit from "@/components/TechOrbit";
 import InteractiveTerminal from "@/components/InteractiveTerminal";
 import { projects } from "@/data/projects";
+import { useLanguage } from "@/components/LanguageProvider";
+import { t } from "@/lib/translations";
 
 export default function Home() {
+  const { lang } = useLanguage();
+
   return (
     <div className="flex flex-col gap-32 py-24">
       {/* Hero Section */}
@@ -19,12 +25,12 @@ export default function Home() {
           <div className="flex max-w-2xl flex-col gap-6">
             <FadeIn>
               <p className="text-sm font-semibold uppercase tracking-widest text-accent-1" data-accent>
-                Developer &middot; Data Technician
+                {t.hero.role[lang]}
               </p>
             </FadeIn>
             <FadeIn>
               <h1 className="text-5xl font-bold tracking-tight sm:text-7xl">
-                Hi, I&apos;m{" "}
+                {t.hero.greetingPre[lang]}
                 <span className="animate-gradient-text" data-accent>
                   Christian Hagen Wiker
                 </span>
@@ -32,29 +38,42 @@ export default function Home() {
             </FadeIn>
             <FadeIn>
               <p className="text-xl leading-relaxed text-zinc-400">
-                Based in Elverum, Norway. Currently at{" "}
-                <span className="font-medium text-zinc-200">Pelias</span>, where
-                I build standalone services and modern web applications with{" "}
-                <span className="font-medium text-accent-4" data-accent>C#</span>,{" "}
-                <span className="font-medium text-accent-2" data-accent>Blazor</span>, and{" "}
-                <span className="font-medium text-accent-3" data-accent>AI-driven workflows</span>.
+                {t.hero.introPre[lang]}
+                <span className="font-medium text-zinc-200">Pelias</span>
+                {t.hero.introMid[lang]}
+                <span className="font-medium text-accent-4" data-accent>C#</span>
+                {t.hero.introAnd[lang]}
+                <span className="font-medium text-accent-2" data-accent>Blazor</span>
+                {t.hero.introEnd[lang]}
+                <span className="font-medium text-accent-3" data-accent>{t.hero.aiWorkflows[lang]}</span>
+                {t.hero.introDot[lang]}
               </p>
             </FadeIn>
             <FadeIn>
-              <div className="flex gap-4">
+              <div className="flex flex-wrap gap-4">
                 <SmoothLink
                   href="#projects"
                   className="btn-primary rounded-full bg-gradient-to-r from-accent-1 to-accent-3 px-8 py-3.5 font-semibold text-white"
                   data-accent
                 >
-                  <span>View My Projects</span>
+                  <span>{t.hero.viewProjects[lang]}</span>
                 </SmoothLink>
                 <SmoothLink
                   href="#contact"
                   className="btn-outline rounded-full border border-zinc-700 px-8 py-3.5 font-semibold text-zinc-300"
                 >
-                  Get in Touch
+                  {t.hero.getInTouch[lang]}
                 </SmoothLink>
+                <a
+                  href="/cv.pdf"
+                  download
+                  className="btn-outline flex items-center gap-2 rounded-full border border-zinc-700 px-8 py-3.5 font-semibold text-zinc-300 transition-colors hover:border-accent-1/50 hover:text-zinc-100"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="h-4 w-4">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                  </svg>
+                  {t.hero.downloadCv[lang]}
+                </a>
               </div>
             </FadeIn>
           </div>
@@ -84,13 +103,13 @@ export default function Home() {
       <section id="stack" className="container mx-auto max-w-6xl px-6">
         <FadeIn>
           <div className="mb-12 flex items-center gap-4">
-            <h2 className="text-3xl font-bold tracking-tight">At a Glance</h2>
+            <h2 className="text-3xl font-bold tracking-tight">{t.glance.heading[lang]}</h2>
             <div className="h-px flex-1 bg-gradient-to-r from-accent-1/40 to-transparent" data-accent />
           </div>
         </FadeIn>
 
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {/* Tech Orbit — large cell */}
+          {/* Tech Orbit - large cell */}
           <FadeIn className="md:col-span-2 lg:col-span-2 lg:row-span-2">
             <div className="flex h-full items-center justify-center overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900/40 backdrop-blur-sm p-4">
               <TechOrbit />
@@ -105,10 +124,10 @@ export default function Home() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
                   <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
                 </span>
-                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Currently</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">{t.glance.currently[lang]}</span>
               </div>
-              <p className="text-lg font-bold text-zinc-100">Developer at Pelias</p>
-              <p className="text-sm text-zinc-400">Building internal tools, services, and data pipelines in C# and .NET</p>
+              <p className="text-lg font-bold text-zinc-100">{t.glance.currentRole[lang]}</p>
+              <p className="text-sm text-zinc-400">{t.glance.currentDesc[lang]}</p>
             </div>
           </FadeIn>
 
@@ -120,13 +139,13 @@ export default function Home() {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
                   <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 0 1 15 0Z" />
                 </svg>
-                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">Location</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-zinc-500">{t.glance.location[lang]}</span>
               </div>
-              <p className="text-lg font-bold text-zinc-100">Elverum, Norway</p>
+              <p className="text-lg font-bold text-zinc-100">{t.glance.city[lang]}</p>
             </div>
           </FadeIn>
 
-          {/* Terminal — full width */}
+          {/* Terminal - full width */}
           <FadeIn className="md:col-span-2 lg:col-span-3">
             <InteractiveTerminal />
           </FadeIn>
@@ -137,7 +156,7 @@ export default function Home() {
       <section id="projects" className="container mx-auto max-w-5xl px-6">
         <FadeIn>
           <div className="mb-12 flex items-center gap-4">
-            <h2 className="text-3xl font-bold tracking-tight">Featured Projects</h2>
+            <h2 className="text-3xl font-bold tracking-tight">{t.projectsSection.heading[lang]}</h2>
             <div className="h-px flex-1 bg-gradient-to-r from-accent-1/40 to-transparent" data-accent />
           </div>
         </FadeIn>
@@ -154,7 +173,7 @@ export default function Home() {
       <section id="contact" className="container mx-auto max-w-5xl px-6">
         <FadeIn>
           <div className="mb-12 flex items-center gap-4">
-            <h2 className="text-3xl font-bold tracking-tight">Get in Touch</h2>
+            <h2 className="text-3xl font-bold tracking-tight">{t.contactSection.heading[lang]}</h2>
             <div className="h-px flex-1 bg-gradient-to-r from-accent-1/40 to-transparent" data-accent />
           </div>
         </FadeIn>
@@ -170,7 +189,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <p className="text-sm text-zinc-500">Email</p>
+                <p className="text-sm text-zinc-500">{t.contactSection.emailLabel[lang]}</p>
                 <p className="font-medium text-zinc-200">chrishawik@gmail.com</p>
               </div>
             </a>
@@ -186,7 +205,7 @@ export default function Home() {
                 </svg>
               </div>
               <div>
-                <p className="text-sm text-zinc-500">GitHub</p>
+                <p className="text-sm text-zinc-500">{t.contactSection.githubLabel[lang]}</p>
                 <p className="font-medium text-zinc-200">ChristianHWiker</p>
               </div>
             </a>

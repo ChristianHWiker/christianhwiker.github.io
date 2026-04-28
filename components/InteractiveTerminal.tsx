@@ -12,13 +12,13 @@ interface Line {
 const COMMANDS: Record<string, () => Line[]> = {
   help: () => [
     { type: "accent", text: "Available commands:" },
-    { type: "output", text: "  about       — who I am" },
-    { type: "output", text: "  skills      — tech stack" },
-    { type: "output", text: "  projects    — featured work" },
-    { type: "output", text: "  contact     — get in touch" },
-    { type: "output", text: "  history     — work experience" },
-    { type: "output", text: "  whoami      — quick summary" },
-    { type: "output", text: "  clear       — reset terminal" },
+    { type: "output", text: "  about       - who I am" },
+    { type: "output", text: "  skills      - tech stack" },
+    { type: "output", text: "  projects   , featured work" },
+    { type: "output", text: "  contact    , get in touch" },
+    { type: "output", text: "  history    , work experience" },
+    { type: "output", text: "  whoami      - quick summary" },
+    { type: "output", text: "  clear       - reset terminal" },
   ],
   about: () => [
     { type: "accent", text: "Christian Hagen Wiker" },
@@ -26,8 +26,8 @@ const COMMANDS: Record<string, () => Line[]> = {
     { type: "output", text: "Currently building standalone services and modern web apps at Pelias." },
     { type: "output", text: "" },
     { type: "accent", text: "Beyond the code:" },
-    { type: "output", text: "Been building PCs since I was little — hardware is where it started." },
-    { type: "output", text: "Lifelong gamer. Plays guitar on the heavier side — metalcore," },
+    { type: "output", text: "Been building PCs since I was little, hardware is where it started." },
+    { type: "output", text: "Lifelong gamer. Plays guitar on the heavier side, metalcore," },
     { type: "output", text: "deathcore, and prog metal." },
   ],
   skills: () => [
@@ -60,7 +60,7 @@ const COMMANDS: Record<string, () => Line[]> = {
   history: () => [
     { type: "accent", text: "Work Experience" },
     { type: "output", text: "" },
-    { type: "accent", text: "Pelias — Developer & Data Technician" },
+    { type: "accent", text: "Pelias, Developer & Data Technician" },
     { type: "output", text: "  Building internal tools, services, and data pipelines." },
     { type: "output", text: "  Modernizing legacy systems with C# and .NET." },
     { type: "output", text: "  Leading AI adoption for the development team." },
@@ -68,7 +68,7 @@ const COMMANDS: Record<string, () => Line[]> = {
   whoami: () => [
     {
       type: "output",
-      text: "christian — developer who turns legacy pain into modern solutions",
+      text: "christian, developer who turns legacy pain into modern solutions",
     },
   ],
   "sudo hire-me": () => [
@@ -86,7 +86,7 @@ const COMMANDS: Record<string, () => Line[]> = {
     { type: "output", text: "Shell:    C# / TypeScript / SQL" },
     { type: "output", text: "DE:       VS Code + Blazor" },
     { type: "output", text: "GPU:      Building PCs since childhood" },
-    { type: "output", text: "Audio:    Guitar — metalcore/deathcore/prog metal" },
+    { type: "output", text: "Audio:    Guitar, metalcore/deathcore/prog metal" },
     { type: "output", text: "PID 1:    Gaming (lifelong)" },
     { type: "output", text: "Terminal: You're in it right now" },
   ],

@@ -21,7 +21,7 @@ export default function ThemeSwitcher() {
 
   return (
     <div ref={ref} className="relative">
-      {/* Trigger — gradient dot showing current theme */}
+      {/* Trigger - gradient dot showing current theme */}
       <button
         onClick={() => setOpen((o) => !o)}
         aria-label="Change color theme"
