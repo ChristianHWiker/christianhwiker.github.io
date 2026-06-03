@@ -29,6 +29,7 @@ const rings: Ring[] = [
       { id: "dotnet", name: ".NET", icon: "/icons/dotnet.svg" },
       { id: "blazor", name: "Blazor", icon: "/icons/blazor.svg" },
       { id: "aspnet", name: "ASP.NET", icon: "/icons/aspnet.svg" },
+      { id: "kotlin", name: "Kotlin", icon: "/icons/kotlin.svg" },
       { id: "cpp", name: "C++", icon: "/icons/cpp.svg" },
     ],
   },

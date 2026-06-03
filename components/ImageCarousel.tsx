@@ -6,6 +6,8 @@ import Image from "next/image";
 interface Slide {
   src: string;
   alt: string;
+  width?: number;
+  height?: number;
 }
 
 export default function ImageCarousel({ slides }: { slides: Slide[] }) {
@@ -32,8 +34,8 @@ export default function ImageCarousel({ slides }: { slides: Slide[] }) {
             <Image
               src={slide.src}
               alt={slide.alt}
-              width={1200}
-              height={675}
+              width={slide.width ?? 1200}
+              height={slide.height ?? 675}
               className="w-full object-contain"
               draggable={false}
             />

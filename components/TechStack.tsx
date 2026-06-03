@@ -46,6 +46,12 @@ const stack: Category[] = [
       { name: "Git", icon: "/icons/git.svg" },
     ],
   },
+  {
+    label: "Mobile",
+    items: [
+      { name: "Kotlin", icon: "/icons/kotlin.svg" },
+    ],
+  },
 ];
 
 export default function TechStack() {

@@ -146,6 +146,16 @@ const techs: TechDetail[] = [
     },
   },
   {
+    id: "kotlin",
+    name: "Kotlin",
+    icon: "/icons/kotlin.svg",
+    category: "Mobile",
+    description: {
+      en: "The language behind Recipe Calculator, a native Android app I built solo with Jetpack Compose and Material 3. I picked it up to learn modern mobile development end to end, from exact rational math and OCR parsing to a dual-flavor build with a biometric-locked security stack.",
+      no: "Språket bak Recipe Calculator, en native Android-app jeg bygde alene med Jetpack Compose og Material 3. Jeg lærte meg det for å forstå moderne mobilutvikling fra start til slutt, fra eksakt brøkmatematikk og OCR-tolkning til en byggvariant med biometrisk låst sikkerhetslag.",
+    },
+  },
+  {
     id: "unity",
     name: "Unity",
     icon: "/icons/unity.svg",
@@ -167,7 +177,7 @@ const techs: TechDetail[] = [
   },
 ];
 
-const categories = ["Backend", "Frontend", "Data", "Tools", "Game Dev"];
+const categories = ["Backend", "Frontend", "Data", "Tools", "Mobile", "Game Dev"];
 
 export default function StackPage() {
   const { lang } = useLanguage();

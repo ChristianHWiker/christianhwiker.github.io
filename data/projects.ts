@@ -57,13 +57,31 @@ export const projects: Project[] = [
       no: "AI-produktivitetsopplæring",
     },
     description: {
-      en: "Initiative to evaluate and implement AI tools (Claude Code, Gemini, GPT) into development workflows. Tested alternatives and standardised on Claude Code. Conducted training sessions for the full IT department, senior developers included.",
-      no: "Initiativ for å evaluere og implementere AI-verktøy (Claude Code, Gemini, GPT) i utviklingsarbeidsflyter. Testet alternativer og standardiserte på Claude Code. Gjennomførte opplæring for hele IT-avdelingen, inkludert senior-utviklere.",
+      en: "Initiative to evaluate and implement AI tools (Claude Code, Gemini, GPT) into development workflows. Tested alternatives and standardised on Claude Code. Conducted training sessions for the full IT department. The course now runs weekly for senior developers, led entirely by me.",
+      no: "Initiativ for å evaluere og implementere AI-verktøy (Claude Code, Gemini, GPT) i utviklingsarbeidsflyter. Testet alternativer og standardiserte på Claude Code. Gjennomførte opplæring for hele IT-avdelingen. Kurset holdes nå ukentlig for senior-utviklere, og ledes av meg alene.",
     },
     tags: ["AI", "Claude Code", "Productivity", "Training"],
     impact: {
       en: "Adopted across the full IT department",
       no: "Tatt i bruk av hele IT-avdelingen",
+    },
+  },
+  {
+    id: "4",
+    title: {
+      en: "Recipe Calculator (mise)",
+      no: "Oppskriftskalkulator (mise)",
+    },
+    description: {
+      en: "A native Android app I built out of frustration: I was scaling up a homemade recipe and got tired of the trial and error, so I made a calculator to do it for me. It rescales any recipe from a single limiting ingredient, keeps amounts as exact fractions instead of rounding, and converts between cups and grams using general ingredient ratios tuned to be a solid, honest approximation.",
+      no: "En native Android-app jeg laget av ren frustrasjon: jeg holdt på å skalere opp en hjemmelaget oppskrift og ble lei av all prøvingen og feilingen, så jeg bygde en kalkulator som gjør det for meg. Den skalerer hvilken som helst oppskrift ut fra én begrensende ingrediens, beholder mengdene som eksakte brøker i stedet for å runde av, og konverterer mellom kopp og gram ved hjelp av generelle ingrediensforhold finjustert til å være en solid og ærlig tilnærming.",
+    },
+    tags: ["Kotlin", "Android", "Jetpack Compose", "OCR"],
+    detailPage: "/projects/mise",
+    github: "https://github.com/ChristianHWiker/mise",
+    impact: {
+      en: "Built solo, end to end, open source",
+      no: "Bygget alene fra bunnen, åpen kildekode",
     },
   },
 ];
