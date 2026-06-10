@@ -13,9 +13,28 @@ export interface Project {
   githubRepos?: { name: string; url: string }[];
   detailPage?: string;
   impact?: LocalizedText;
+  current?: boolean;
 }
 
 export const projects: Project[] = [
+  {
+    id: "5",
+    current: true,
+    title: {
+      en: "Pelias Portal",
+      no: "Pelias Portal",
+    },
+    description: {
+      en: "An application portal that becomes the new front page for everyone logging in at Pelias: customers, field technicians, and backoffice alike. A personal, role-based dashboard puts every tool at most one click away, backed by a full authentication rewrite with two-factor login, self-service access requests, live health status for the underlying systems, and a shared audit log. Started as a pitch I wrote on my own initiative; management approved it and made me lead developer.",
+      no: "En applikasjonsportal som blir den nye forsiden for alle som logger inn hos Pelias: kunder, teknikere i felt og backoffice. Et personlig, rollebasert dashboard gjør at hvert verktøy er maks ett klikk unna, støttet av en full omskriving av autentiseringen med tofaktorinnlogging, selvbetjent tilgangsforespørsel, sanntids driftsstatus for underliggende systemer og en felles revisjonslogg. Startet som et forslag jeg skrev på eget initiativ; ledelsen vedtok det og ga meg rollen som hovedutvikler.",
+    },
+    tags: ["C#", ".NET 10", "Blazor", "Authentication"],
+    detailPage: "/projects/pelias-portal",
+    impact: {
+      en: "My pitch → lead developer role",
+      no: "Mitt forslag → hovedutviklerrolle",
+    },
+  },
   {
     id: "1",
     title: {

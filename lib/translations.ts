@@ -38,10 +38,10 @@ export const t = {
   glance: {
     heading: { en: "At a Glance", no: "Kort oppsummert" },
     currently: { en: "Currently", no: "Akkurat nå" },
-    currentRole: { en: "Developer at Pelias", no: "Utvikler hos Pelias" },
+    currentRole: { en: "Lead developer on Pelias Portal", no: "Hovedutvikler for Pelias Portal" },
     currentDesc: {
-      en: "Building internal tools, services, and data pipelines in C# and .NET",
-      no: "Bygger interne verktøy, tjenester og datapipelines med C# og .NET",
+      en: "Building the application portal every Pelias user will log in through, including a full authentication rewrite",
+      no: "Bygger applikasjonsportalen alle Pelias-brukere skal logge inn gjennom, inkludert en full omskriving av autentiseringen",
     },
     location: { en: "Location", no: "Lokasjon" },
     city: { en: "Elverum, Norway", no: "Elverum, Norge" },
@@ -58,6 +58,7 @@ export const t = {
   projectCard: {
     details: { en: "Details", no: "Detaljer" },
     liveDemo: { en: "Live Demo", no: "Live-demo" },
+    current: { en: "Current project", no: "Pågående prosjekt" },
   },
   back: {
     toPortfolio: { en: "Back to portfolio", no: "Tilbake til portefølje" },
@@ -280,6 +281,77 @@ export const t = {
       body: {
         en: "mise is Kotlin 2.2 and Jetpack Compose with Material 3, following an MVVM architecture with unidirectional state and Coroutines. Hilt handles dependency injection, Room stores recipes locally with migration-tested schemas, and CameraX plus ML Kit power the OCR capture. The core logic (rationals, units, density, and the parser) lives in standalone pure-function libraries with their own unit tests, so the tricky math is verified in isolation from the UI. It is local-only, with no accounts and no cloud sync.",
         no: "mise er Kotlin 2.2 og Jetpack Compose med Material 3, bygget på en MVVM-arkitektur med enveis tilstandsflyt og Coroutines. Hilt håndterer dependency injection, Room lagrer oppskrifter lokalt med migrasjonstestede skjemaer, og CameraX og ML Kit driver OCR-innlesingen. Kjernelogikken (brøker, enheter, tetthet og parseren) ligger i frittstående biblioteker med rene funksjoner og egne enhetstester, så den vanskelige matematikken er verifisert isolert fra grensesnittet. Appen er kun lokal, uten kontoer og uten skysynkronisering.",
+      },
+    },
+  },
+  peliasPortal: {
+    title: { en: "Pelias Portal", no: "Pelias Portal" },
+    status: { en: "In active development", no: "Under aktiv utvikling" },
+    counters: {
+      clicks: {
+        en: "Max clicks from login to tool",
+        no: "Maks klikk fra innlogging til verktøy",
+      },
+      groups: { en: "User groups, one front door", no: "Brukergrupper, én inngang" },
+      phases: { en: "Auth rollout phases", no: "Faser i auth-utrullingen" },
+    },
+    background: {
+      heading: { en: "From pitch to project", no: "Fra forslag til prosjekt" },
+      body: {
+        en: "This project started as a written pitch I put together on my own initiative. Pelias has plenty of internal tools, but they're buried several menu levels deep on the internal website: field technicians keep private bookmarks to avoid the navigation, customers never discover the self-service tools that exist, and new hires spend weeks learning where things live. It's not a content problem, it's a navigation problem. Management approved the pitch and made me lead developer. This is what I'm working on right now.",
+        no: "Prosjektet startet som et skriftlig forslag jeg satte sammen på eget initiativ. Pelias har mange interne verktøy, men de ligger begravet flere menynivåer ned på den interne nettsiden: teknikere i felt holder seg med private bokmerker for å slippe navigeringen, kunder oppdager aldri selvbetjeningsverktøyene som finnes, og nyansatte bruker uker på å lære seg hvor ting bor. Det er ikke et innholdsproblem, det er et navigasjonsproblem. Ledelsen vedtok forslaget og ga meg rollen som hovedutvikler. Dette er det jeg jobber med akkurat nå.",
+      },
+    },
+    whatItIs: {
+      heading: { en: "What it is", no: "Hva det er" },
+      body: {
+        en: "The portal becomes the new front page for everyone who logs in at Pelias: customers, field technicians, and backoffice alike. Two principles drive the design: every tool is at most one click from login, and you only see what you actually use. A technician gets the map application and support tickets at the top, a customer sees their self-service tools, and an administrator sees the operations tooling.",
+        no: "Portalen blir den nye forsiden for alle som logger inn hos Pelias: kunder, teknikere i felt og backoffice. To prinsipper styrer designet: hvert verktøy er maks ett klikk fra innlogging, og du ser kun det du faktisk bruker. En tekniker får kartprogrammet og support-tickets øverst, en kunde ser sine selvbetjeningsverktøy, og en administrator ser driftsverktøyene.",
+      },
+    },
+    features: {
+      heading: { en: "Key features", no: "Hovedfunksjoner" },
+      items: {
+        en: [
+          ["Personal dashboard", "a role-based front page that only shows the tools the user has access to, with no menu hunting."],
+          ["Self-service access requests", "users discover available tools and request access with a justification; an administrator approves or rejects with one click."],
+          ["Live operational status", "a background service polls health endpoints on every underlying application and pushes status changes live to the browser, so users see that a system is down before they click into it."],
+          ["Admin panel", "central management of registered tools, user permissions, and access requests, including off-boarding in a single operation when someone leaves."],
+          ["Shared audit log", "logins, permission changes, and status changes are logged automatically with timestamp, user, and context."],
+          ["Announcements", "planned maintenance and incidents are published from the admin panel and shown as banners or dashboard cards to the users they affect."],
+        ],
+        no: [
+          ["Personlig dashboard", "en rollebasert forside som kun viser verktøyene brukeren har tilgang til, uten menyjakt."],
+          ["Selvbetjent tilgangsforespørsel", "brukere oppdager tilgjengelige verktøy og ber om tilgang med en begrunnelse; en administrator godkjenner eller avslår med ett klikk."],
+          ["Sanntids driftsstatus", "en bakgrunnstjeneste poller helse-endepunkter på alle underliggende applikasjoner og pusher statusendringer live til nettleseren, så brukerne ser at et system er nede før de klikker seg inn."],
+          ["Adminpanel", "sentral håndtering av registrerte verktøy, brukerrettigheter og tilgangsforespørsler, inkludert off-boarding i én operasjon når noen slutter."],
+          ["Felles revisjonslogg", "innlogginger, rettighetsendringer og statusendringer logges automatisk med tidsstempel, bruker og kontekst."],
+          ["Kunngjøringer", "planlagt vedlikehold og hendelser publiseres fra adminpanelet og vises som banner eller dashboard-kort til brukerne det gjelder."],
+        ],
+      } as Record<Lang, [string, string][]>,
+    },
+    auth: {
+      heading: {
+        en: "A full authentication rewrite",
+        no: "Full omskriving av autentiseringen",
+      },
+      body: {
+        en: "The portal replaces the old login flow with a complete authentication rewrite: two-factor login, role-based permissions, and automatic profile creation on first sign-in. The rollout is deliberately phased. Phase one authenticates against Pelias' existing login API, so nobody gets a new password to remember. Phase two moves customers to Entra External ID (CIAM) and employees to Entra ID SSO. Security details include cookie-based authentication over HTTPS with HttpOnly, Secure, and SameSite, rate limiting on the login endpoint, and secrets kept in Azure Key Vault.",
+        no: "Portalen erstatter den gamle påloggingsflyten med en full omskriving av autentiseringen: tofaktorinnlogging, rollebaserte rettigheter og automatisk profilopprettelse ved første pålogging. Utrullingen er bevisst faset. Fase én autentiserer mot Pelias' eksisterende påloggings-API, så ingen får et nytt passord å huske. Fase to flytter kundene til Entra External ID (CIAM) og de ansatte til Entra ID SSO. Sikkerhetsdetaljer inkluderer cookie-basert autentisering over HTTPS med HttpOnly, Secure og SameSite, rate limiting på påloggings-endepunktet og hemmeligheter i Azure Key Vault.",
+      },
+    },
+    built: {
+      heading: { en: "How it's built", no: "Hvordan den bygges" },
+      body: {
+        en: ".NET 10 and Blazor Web App (InteractiveServer) on SQL Server, with EF Core for the schema and writes, and Dapper available for performance-sensitive reads like the audit log. Live status updates are pushed over the Blazor Server channel without page refreshes. The design is a tailored Pelias profile in red and white with glassmorphism and micro-animations.",
+        no: ".NET 10 og Blazor Web App (InteractiveServer) på SQL Server, med EF Core for skjema og skriving, og Dapper tilgjengelig for ytelsessensitive lesinger som revisjonsloggen. Statusoppdateringer pushes live over Blazor Server-kanalen uten sideoppdateringer. Designet er en skreddersydd Pelias-profil i rødt og hvitt med glassmorfisme og mikroanimasjoner.",
+      },
+    },
+    role: {
+      heading: { en: "My role", no: "Min rolle" },
+      body: {
+        en: "I wrote the pitch, designed the architecture, and lead the development. This is my current day-to-day work at Pelias.",
+        no: "Jeg skrev forslaget, designet arkitekturen og leder utviklingen. Dette er det jeg jobber med til daglig hos Pelias.",
       },
     },
   },

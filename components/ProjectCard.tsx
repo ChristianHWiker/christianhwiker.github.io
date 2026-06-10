@@ -14,6 +14,17 @@ export default function ProjectCard({ project }: { project: Project }) {
       <div className="h-1 w-full bg-gradient-to-r from-accent-1 via-accent-3 to-accent-4 opacity-60 transition-opacity group-hover:opacity-100" data-accent />
 
       <div className="flex flex-1 flex-col p-6">
+        {project.current && (
+          <div className="mb-3 flex items-center gap-2">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+            </span>
+            <span className="text-xs font-semibold uppercase tracking-widest text-green-400">
+              {t.projectCard.current[lang]}
+            </span>
+          </div>
+        )}
         <h3 className="text-xl font-bold tracking-tight text-zinc-50">
           {project.title[lang]}
         </h3>
