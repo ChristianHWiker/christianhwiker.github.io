@@ -44,6 +44,10 @@ export default function Home() {
                 <span className="font-medium text-accent-4" data-accent>C#</span>
                 {t.hero.introAnd[lang]}
                 <span className="font-medium text-accent-2" data-accent>Blazor</span>
+                {t.hero.introAnd[lang]}
+                <span className="font-medium text-accent-1" data-accent>React</span>
+                {t.hero.introAnd[lang]}
+                <span className="font-medium text-accent-4" data-accent>TypeScript</span>
                 {t.hero.introEnd[lang]}
                 <span className="font-medium text-accent-3" data-accent>{t.hero.aiWorkflows[lang]}</span>
                 {t.hero.introDot[lang]}

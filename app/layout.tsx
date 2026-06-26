@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Christian Hagen Wiker | Developer Portfolio",
-  description: "Developer and data technician based in Elverum, Norway. Building standalone services and modern web applications with C#, Blazor, and AI-driven workflows.",
+  description: "Developer and data technician based in Elverum, Norway. Building standalone services and modern web applications across the stack with C#, Blazor, React, TypeScript, and AI-driven workflows.",
 };
 
 export default function RootLayout({
