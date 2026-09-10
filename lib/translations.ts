@@ -38,10 +38,10 @@ export const t = {
   glance: {
     heading: { en: "At a Glance", no: "Kort oppsummert" },
     currently: { en: "Currently", no: "Akkurat nå" },
-    currentRole: { en: "Lead developer on Pelias Portal", no: "Hovedutvikler for Pelias Portal" },
+    currentRole: { en: "Lead developer on Pelias Access Suite", no: "Hovedutvikler for Pelias Access Suite" },
     currentDesc: {
-      en: "Building the application portal every Pelias user will log in through, including a full authentication rewrite",
-      no: "Bygger applikasjonsportalen alle Pelias-brukere skal logge inn gjennom, inkludert en full omskriving av autentiseringen",
+      en: "Building the dashboard and shared login every Pelias user will sign in through, and the development platform the company is moving onto",
+      no: "Bygger dashboardet og den felles innloggingen alle Pelias-brukere skal logge inn gjennom, og utviklingsplattformen firmaet går over til",
     },
     location: { en: "Location", no: "Lokasjon" },
     city: { en: "Elverum, Norway", no: "Elverum, Norge" },
@@ -73,6 +73,7 @@ export const t = {
       Backend: { en: "Backend", no: "Backend" },
       Frontend: { en: "Frontend", no: "Frontend" },
       Data: { en: "Data", no: "Data" },
+      DevOps: { en: "DevOps", no: "DevOps" },
       Tools: { en: "Tools", no: "Verktøy" },
       Mobile: { en: "Mobile", no: "Mobil" },
       "Game Dev": { en: "Game Dev", no: "Spillutvikling" },
@@ -95,8 +96,8 @@ export const t = {
     problem: {
       heading: { en: "The problem", no: "Problemet" },
       body: {
-        en: "The company's web server was responsible for generating and sending emails as part of everyday operations. Because emails were created and sent inline with page requests, the server would frequently hang, sometimes for over an hour at a time, while it processed large batches. During these hangs, the entire website was slow or unresponsive for everyone.",
-        no: "Selskapets webserver sto for å generere og sende e-poster som en del av den daglige driften. Fordi e-postene ble opprettet og sendt inline med sideforespørslene, hang serveren seg jevnlig, av og til i over en time, mens den behandlet store batcher. I disse periodene var hele nettsiden treg eller utilgjengelig for alle brukerne.",
+        en: "The company's web server was responsible for generating and sending emails as part of everyday operations. Because emails were created and sent inline with page requests, the server would hang while it processed large batches, on average more than an hour of downtime a day. During those hangs, the entire website was slow or unresponsive for everyone.",
+        no: "Selskapets webserver sto for å generere og sende e-poster som en del av den daglige driften. Fordi e-postene ble opprettet og sendt inline med sideforespørslene, hang serveren mens den behandlet store batcher, i snitt over en time nedetid hver dag. I disse periodene var hele nettsiden treg eller utilgjengelig for alle brukerne.",
       },
     },
     solution: {
@@ -284,16 +285,16 @@ export const t = {
       },
     },
   },
-  peliasPortal: {
-    title: { en: "Pelias Portal", no: "Pelias Portal" },
+  peliasAccessSuite: {
+    title: { en: "Pelias Access Suite", no: "Pelias Access Suite" },
     status: { en: "In active development", no: "Under aktiv utvikling" },
     counters: {
       clicks: {
         en: "Max clicks from login to tool",
         no: "Maks klikk fra innlogging til verktøy",
       },
-      groups: { en: "User groups, one front door", no: "Brukergrupper, én inngang" },
-      phases: { en: "Auth rollout phases", no: "Faser i auth-utrullingen" },
+      groups: { en: "Tenant types behind one login", no: "Tenant-typer bak én innlogging" },
+      services: { en: "Services: identity and access", no: "Tjenester: identitet og tilgang" },
     },
     background: {
       heading: { en: "From pitch to project", no: "Fra forslag til prosjekt" },
@@ -305,8 +306,8 @@ export const t = {
     whatItIs: {
       heading: { en: "What it is", no: "Hva det er" },
       body: {
-        en: "The portal becomes the new front page for everyone who logs in at Pelias: customers, field technicians, and backoffice alike. Two principles drive the design: every tool is at most one click from login, and you only see what you actually use. A technician gets the map application and support tickets at the top, a customer sees their self-service tools, and an administrator sees the operations tooling.",
-        no: "Portalen blir den nye forsiden for alle som logger inn hos Pelias: kunder, teknikere i felt og backoffice. To prinsipper styrer designet: hvert verktøy er maks ett klikk fra innlogging, og du ser kun det du faktisk bruker. En tekniker får kartprogrammet og support-tickets øverst, en kunde ser sine selvbetjeningsverktøy, og en administrator ser driftsverktøyene.",
+        en: "Pelias Access Suite will be the front page for everyone who logs in at Pelias: employees, customers, and chain customers. Two principles drive the design: every tool is at most one click from login, and you only see what you actually use. A technician gets the map application and support tickets at the top, a customer sees their self-service tools, and an administrator sees the operations tooling.",
+        no: "Pelias Access Suite skal bli forsiden for alle som logger inn hos Pelias: ansatte, kunder og kjedekunder. To prinsipper styrer designet: hvert verktøy er maks ett klikk fra innlogging, og du ser kun det du faktisk bruker. En tekniker får kartprogrammet og support-tickets øverst, en kunde ser sine selvbetjeningsverktøy, og en administrator ser driftsverktøyene.",
       },
     },
     features: {
@@ -315,7 +316,7 @@ export const t = {
         en: [
           ["Personal dashboard", "a role-based front page that only shows the tools the user has access to, with no menu hunting."],
           ["Self-service access requests", "users discover available tools and request access with a justification; an administrator approves or rejects with one click."],
-          ["Live operational status", "a background service polls health endpoints on every underlying application and pushes status changes live to the browser, so users see that a system is down before they click into it."],
+          ["Live operational status", "a background service checks health endpoints on the underlying applications and pushes status changes live to the browser, so users see that a system is down before they click into it."],
           ["Admin panel", "central management of registered tools, user permissions, and access requests, including off-boarding in a single operation when someone leaves."],
           ["Shared audit log", "logins, permission changes, and status changes are logged automatically with timestamp, user, and context."],
           ["Announcements", "planned maintenance and incidents are published from the admin panel and shown as banners or dashboard cards to the users they affect."],
@@ -323,7 +324,7 @@ export const t = {
         no: [
           ["Personlig dashboard", "en rollebasert forside som kun viser verktøyene brukeren har tilgang til, uten menyjakt."],
           ["Selvbetjent tilgangsforespørsel", "brukere oppdager tilgjengelige verktøy og ber om tilgang med en begrunnelse; en administrator godkjenner eller avslår med ett klikk."],
-          ["Sanntids driftsstatus", "en bakgrunnstjeneste poller helse-endepunkter på alle underliggende applikasjoner og pusher statusendringer live til nettleseren, så brukerne ser at et system er nede før de klikker seg inn."],
+          ["Sanntids driftsstatus", "en bakgrunnstjeneste sjekker helse-endepunkter på de underliggende applikasjonene og pusher statusendringer live til nettleseren, så brukerne ser at et system er nede før de klikker seg inn."],
           ["Adminpanel", "sentral håndtering av registrerte verktøy, brukerrettigheter og tilgangsforespørsler, inkludert off-boarding i én operasjon når noen slutter."],
           ["Felles revisjonslogg", "innlogginger, rettighetsendringer og statusendringer logges automatisk med tidsstempel, bruker og kontekst."],
           ["Kunngjøringer", "planlagt vedlikehold og hendelser publiseres fra adminpanelet og vises som banner eller dashboard-kort til brukerne det gjelder."],
@@ -332,12 +333,19 @@ export const t = {
     },
     auth: {
       heading: {
-        en: "A full authentication rewrite",
-        no: "Full omskriving av autentiseringen",
+        en: "Identity and access are separate",
+        no: "Identitet og tilgang er adskilt",
       },
       body: {
-        en: "The portal replaces the old login flow with a complete authentication rewrite: two-factor login, role-based permissions, and automatic profile creation on first sign-in. The rollout is deliberately phased. Phase one authenticates against Pelias' existing login API, so nobody gets a new password to remember. Phase two moves customers to Entra External ID (CIAM) and employees to Entra ID SSO. Security details include cookie-based authentication over HTTPS with HttpOnly, Secure, and SameSite, rate limiting on the login endpoint, and secrets kept in Azure Key Vault.",
-        no: "Portalen erstatter den gamle påloggingsflyten med en full omskriving av autentiseringen: tofaktorinnlogging, rollebaserte rettigheter og automatisk profilopprettelse ved første pålogging. Utrullingen er bevisst faset. Fase én autentiserer mot Pelias' eksisterende påloggings-API, så ingen får et nytt passord å huske. Fase to flytter kundene til Entra External ID (CIAM) og de ansatte til Entra ID SSO. Sikkerhetsdetaljer inkluderer cookie-basert autentisering over HTTPS med HttpOnly, Secure og SameSite, rate limiting på påloggings-endepunktet og hemmeligheter i Azure Key Vault.",
+        en: "The architecture rests on a clear split. Pelias ID is an OIDC login service built on ASP.NET Identity and OpenIddict, and it answers two questions only: who you are, and which tenants you belong to, as an employee, a customer, or a chain customer. It knows nothing about application rights. The dashboard owns those, with a rights model designed to carry over into the applications that get built on top, so an application does not have to invent its own permission scheme. Two-factor login, self-service access requests, the admin panel, and an audit log that records everything, including when I give myself administrator access, all sit on that split.",
+        no: "Arkitekturen hviler på et tydelig skille. Pelias ID er en OIDC-innloggingstjeneste bygget på ASP.NET Identity og OpenIddict, og svarer kun på to spørsmål: hvem du er, og hvilke tenants du tilhører, som ansatt, kunde eller kjedekunde. Den vet ingenting om applikasjonsrettigheter. Dashboardet eier dem, med en rettighetsmodell som er laget for å følge med inn i applikasjonene som bygges videre, så en applikasjon slipper å finne opp sin egen rettighetsmodell. Tofaktorinnlogging, selvbetjent tilgangsforespørsel, adminpanelet og en revisjonslogg der alt registreres, også når jeg gir meg selv administratortilgang, ligger alle på dette skillet.",
+      },
+    },
+    statusSection: {
+      heading: { en: "Where it stands", no: "Status" },
+      body: {
+        en: "Pelias ID is essentially finished, but it is not in use. The dashboard is a work in progress, and none of the applications that will sit behind the suite have been built yet.",
+        no: "Pelias ID er i praksis ferdig utviklet, men er ikke tatt i bruk. Dashboardet er under arbeid, og ingen av applikasjonene som skal ligge bak suiten er bygget ennå.",
       },
     },
     built: {
@@ -352,6 +360,79 @@ export const t = {
       body: {
         en: "I wrote the pitch, designed the architecture, and lead the development. This is my current day-to-day work at Pelias.",
         no: "Jeg skrev forslaget, designet arkitekturen og leder utviklingen. Dette er det jeg jobber med til daglig hos Pelias.",
+      },
+    },
+  },
+  devPlatform: {
+    title: {
+      en: "Development Platform and DevOps",
+      no: "Utviklingsplattform og DevOps",
+    },
+    status: { en: "Running", no: "I drift" },
+    counters: {
+      vms: { en: "Ubuntu Server VMs running", no: "Ubuntu Server-VM-er i drift" },
+      approvals: { en: "Sign-offs before a deploy", no: "Godkjenninger før en utrulling" },
+      standard: {
+        en: "Coding standard for every .NET project",
+        no: "Kodestandard for alle .NET-prosjekter",
+      },
+    },
+    background: {
+      heading: { en: "How it started", no: "Hvordan det startet" },
+      body: {
+        en: "After the email engine showed how much faster we could build with AI tools, the IT manager asked me to define the coding standard and the framework developers work inside. I wanted the rules to be something the build checks rather than something everyone has to remember, so the standard, the project template, and the pipelines were designed as one piece of work.",
+        no: "Etter at e-post sendemotoren viste hvor mye raskere vi kunne utvikle med AI-verktøy, fikk jeg i oppgave av IT-lederen å utforme kodestandarden og rammene utviklerne jobber innenfor. Jeg ville at reglene skulle være noe bygget sjekker, framfor noe hver enkelt må huske, så kodestandarden, prosjektmalen og pipelinene ble designet som én sammenhengende jobb.",
+      },
+    },
+    whatItIs: {
+      heading: { en: "What it is", no: "Hva det er" },
+      body: {
+        en: "A new .NET application starts from a Visual Studio project template with the structure, analyzers, and formatting rules already in place, so the first commit already follows the standard. Builds run as YAML pipelines on an Azure DevOps Server we host ourselves, which was the practical choice for how the company works. The build and test environment is two Ubuntu Server VMs I designed and built, and it is running today.",
+        no: "En ny .NET-applikasjon starter fra en prosjektmal i Visual Studio med struktur, analysatorer og formateringsregler på plass, så den første commiten følger standarden. Bygg kjører som YAML-pipelines på en Azure DevOps Server vi drifter selv, som var det praktiske valget for måten firmaet jobber på. Bygg- og testmiljøet er to Ubuntu Server-VM-er jeg har designet og bygget, og det er i drift i dag.",
+      },
+    },
+    features: {
+      heading: { en: "How it works", no: "Hvordan det fungerer" },
+      items: {
+        en: [
+          ["Build server", "an Ubuntu Server running Docker with Portainer, SQL Server, and a private image registry. Every image the pipelines produce is pushed there."],
+          ["Test server", "runs the images with Docker Compose against a generated test database. Generating it verifies that the data structures and stored procedures the application expects are actually there."],
+          ["Formatting is part of the build", "the pipeline runs dotnet format, and the build fails if the code does not match the standard, so nobody spends review time on whitespace."],
+          ["Green build to merge", "main is protected. A pull request cannot be merged unless the build passes."],
+          ["Two people sign off on a deploy", "releases to staging and to production both need approval from two people, so no single person can push a change all the way out alone."],
+          ["Separated environments", "test and the coming production environment are isolated from each other and pull separately from the same registry, with traffic in and out kept tightly limited."],
+          ["Documentation as I go", "I built an MCP server that lets Claude write the work up in Scrum format while I am doing it, so the documentation matches what was actually built."],
+        ],
+        no: [
+          ["Byggserver", "en Ubuntu Server med Docker, Portainer, SQL Server og et eget image-register. Alle images pipelinene lager, blir pushet dit."],
+          ["Testserver", "kjører imagene med Docker Compose mot en generert testdatabase. Genereringen verifiserer at datastrukturene og de lagrede prosedyrene applikasjonen forventer, faktisk finnes."],
+          ["Formatering er en del av bygget", "pipelinen kjører dotnet format, og bygget feiler hvis koden ikke følger standarden, så ingen bruker tid på formatering i kodegjennomgang."],
+          ["Grønt bygg for å flette", "main er beskyttet. En pull request kan ikke flettes uten at bygget går grønt."],
+          ["To personer godkjenner en utrulling", "utrulling til både staging og produksjon krever godkjenning fra to personer, så ingen kan sende en endring hele veien ut alene."],
+          ["Adskilte miljøer", "test og det kommende produksjonsmiljøet er isolert fra hverandre og henter hver for seg fra det samme registeret, med strengt begrenset trafikk inn og ut."],
+          ["Dokumentasjon underveis", "jeg bygget en MCP-server som lar Claude skrive opp arbeidet i Scrum-format mens jeg holder på, så dokumentasjonen stemmer med det som faktisk ble bygget."],
+        ],
+      } as Record<Lang, [string, string][]>,
+    },
+    built: {
+      heading: { en: "How it's built", no: "Hvordan det er bygget" },
+      body: {
+        en: "Azure DevOps Server on Windows Server handles source control, the YAML pipelines, and the approval gates. The build and test machines are Ubuntu Server with Docker and Docker Compose, managed through Portainer, with SQL Server and the image registry running as containers on the build server. I have also set up Windows test servers with IIS for the applications that run there.",
+        no: "Azure DevOps Server på Windows Server håndterer kildekontroll, YAML-pipelinene og godkjenningsstegene. Bygg- og testmaskinene er Ubuntu Server med Docker og Docker Compose, styrt gjennom Portainer, med SQL Server og image-registeret som containere på byggserveren. Jeg har også satt opp Windows-testservere med IIS for applikasjonene som kjører der.",
+      },
+    },
+    statusSection: {
+      heading: { en: "Where it stands", no: "Status" },
+      body: {
+        en: "The build server and the test server are running. The third VM for production is planned, but not built yet. I am the only developer on the new platform so far. The other developers are being moved over gradually so nobody is left behind, and that pace is deliberate.",
+        no: "Byggserveren og testserveren er i drift. Den tredje VM-en for produksjon er planlagt, men ikke bygget ennå. Jeg er foreløpig eneste utvikler på den nye plattformen. De andre utviklerne flyttes over gradvis så ingen blir hengende etter, og det tempoet er bevisst.",
+      },
+    },
+    role: {
+      heading: { en: "My role", no: "Min rolle" },
+      body: {
+        en: "I wrote the coding standard, built the project template, set up the Azure DevOps Server, and designed and built both Linux VMs, the pipelines, and the approval rules.",
+        no: "Jeg skrev kodestandarden, bygget prosjektmalen, satte opp Azure DevOps Server, og designet og bygget begge Linux-VM-ene, pipelinene og godkjenningsreglene.",
       },
     },
   },

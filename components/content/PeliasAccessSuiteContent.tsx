@@ -6,9 +6,9 @@ import FadeIn from "@/components/FadeIn";
 import { useLanguage } from "@/components/LanguageProvider";
 import { t } from "@/lib/translations";
 
-export default function PeliasPortalContent() {
+export default function PeliasAccessSuiteContent() {
   const { lang } = useLanguage();
-  const tr = t.peliasPortal;
+  const tr = t.peliasAccessSuite;
 
   return (
     <div className="container mx-auto max-w-4xl px-6 py-24">
@@ -38,7 +38,7 @@ export default function PeliasPortalContent() {
           {tr.title[lang]}
         </h1>
         <div className="mt-4 flex flex-wrap gap-2">
-          {["C#", ".NET 10", "Blazor", "Authentication"].map((tag) => (
+          {["C#", ".NET 10", "Blazor", "OIDC"].map((tag) => (
             <span
               key={tag}
               className="rounded-full border border-zinc-800 bg-zinc-800/50 px-3 py-0.5 text-xs font-medium text-zinc-400"
@@ -53,7 +53,7 @@ export default function PeliasPortalContent() {
         <div className="mt-12 grid grid-cols-3 gap-6 rounded-2xl border border-zinc-800 bg-zinc-900/50 p-8">
           <AnimatedCounter end={1} label={tr.counters.clicks[lang]} />
           <AnimatedCounter end={3} label={tr.counters.groups[lang]} />
-          <AnimatedCounter end={2} label={tr.counters.phases[lang]} />
+          <AnimatedCounter end={2} label={tr.counters.services[lang]} />
         </div>
       </FadeIn>
 
@@ -83,6 +83,11 @@ export default function PeliasPortalContent() {
           <section>
             <h2 className="mb-3 text-xl font-semibold text-zinc-100">{tr.auth.heading[lang]}</h2>
             <p>{tr.auth.body[lang]}</p>
+          </section>
+
+          <section>
+            <h2 className="mb-3 text-xl font-semibold text-zinc-100">{tr.statusSection.heading[lang]}</h2>
+            <p>{tr.statusSection.body[lang]}</p>
           </section>
 
           <section>

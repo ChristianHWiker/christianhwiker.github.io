@@ -54,6 +54,10 @@ const rings: Ring[] = [
       { id: "nodejs", name: "Node.js", icon: "/icons/nodejs.svg" },
       { id: "git", name: "Git", icon: "/icons/git.svg" },
       { id: "dapper", name: "Dapper", icon: "/icons/dapper.svg" },
+      { id: "azuredevops", name: "Azure DevOps", icon: "/icons/azuredevops.svg" },
+      { id: "docker", name: "Docker", icon: "/icons/docker.svg" },
+      { id: "ubuntu", name: "Ubuntu Server", icon: "/icons/ubuntu.svg" },
+      { id: "portainer", name: "Portainer", icon: "/icons/portainer.svg" },
     ],
   },
   {

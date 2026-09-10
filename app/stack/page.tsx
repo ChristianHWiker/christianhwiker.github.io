@@ -116,6 +116,46 @@ const techs: TechDetail[] = [
     },
   },
   {
+    id: "azuredevops",
+    name: "Azure DevOps",
+    icon: "/icons/azuredevops.svg",
+    category: "DevOps",
+    description: {
+      en: "The Azure DevOps Server behind the new development platform at Pelias. I set it up on-prem and wrote the YAML pipelines that build every change, fail it if the code does not follow the coding standard, and gate merges to main, along with the approval rules that make a deploy need two people.",
+      no: "Azure DevOps Server-en bak den nye utviklingsplattformen hos Pelias. Jeg satte den opp lokalt og skrev YAML-pipelinene som bygger hver endring, feiler hvis koden ikke følger kodestandarden, og styrer flettinger til main, i tillegg til godkjenningsreglene som gjør at en utrulling krever to personer.",
+    },
+  },
+  {
+    id: "docker",
+    name: "Docker",
+    icon: "/icons/docker.svg",
+    category: "DevOps",
+    description: {
+      en: "How the platform ships anything. The pipelines build images and push them to a private registry, and the test server brings the stack up with Docker Compose against a generated test database that verifies data structures and stored procedures.",
+      no: "Måten plattformen leverer på. Pipelinene bygger images og pusher dem til et eget register, og testserveren starter opp stacken med Docker Compose mot en generert testdatabase som verifiserer datastrukturer og lagrede prosedyrer.",
+    },
+  },
+  {
+    id: "ubuntu",
+    name: "Ubuntu Server",
+    icon: "/icons/ubuntu.svg",
+    category: "DevOps",
+    description: {
+      en: "The two Linux VMs I designed and built for the platform, one build server and one test server. I set up the operating system, Docker, the image registry, and the separation between the environments, with traffic in and out kept tightly limited.",
+      no: "De to Linux-VM-ene jeg designet og bygget for plattformen, én byggserver og én testserver. Jeg satte opp operativsystemet, Docker, image-registeret og skillet mellom miljøene, med strengt begrenset trafikk inn og ut.",
+    },
+  },
+  {
+    id: "portainer",
+    name: "Portainer",
+    icon: "/icons/portainer.svg",
+    category: "DevOps",
+    description: {
+      en: "The management layer on the build server. It gives me a clear view of what is running in Docker, container logs, and the state of the registry, without going to a shell for routine checks.",
+      no: "Administrasjonslaget på byggserveren. Det gir meg god oversikt over hva som kjører i Docker, containerlogger og tilstanden til registeret, uten å måtte inn på serveren for rutinesjekker.",
+    },
+  },
+  {
     id: "nodejs",
     name: "Node.js",
     icon: "/icons/nodejs.svg",
@@ -177,7 +217,7 @@ const techs: TechDetail[] = [
   },
 ];
 
-const categories = ["Backend", "Frontend", "Data", "Tools", "Mobile", "Game Dev"];
+const categories = ["Backend", "Frontend", "Data", "DevOps", "Tools", "Mobile", "Game Dev"];
 
 export default function StackPage() {
   const { lang } = useLanguage();

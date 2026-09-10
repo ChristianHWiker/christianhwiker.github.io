@@ -18,18 +18,36 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "6",
+    current: true,
+    title: {
+      en: "Development Platform and DevOps",
+      no: "Utviklingsplattform og DevOps",
+    },
+    description: {
+      en: "The development platform Pelias is moving onto. I wrote the coding standard, built a Visual Studio project template for new .NET applications, set up an on-prem Azure DevOps Server, and designed and built the build and test environment: two Ubuntu Server VMs running Docker, with a private image registry and a generated test database that verifies data structures and stored procedures. The build fails if the code does not follow the standard, a green build is required to merge to main, and a deploy needs two people to sign off.",
+      no: "Utviklingsplattformen Pelias går over til. Jeg skrev kodestandarden, bygget en prosjektmal i Visual Studio for nye .NET-applikasjoner, satte opp en lokal Azure DevOps Server, og designet og bygget bygg- og testmiljøet: to Ubuntu Server-VM-er med Docker, eget image-register og en generert testdatabase som verifiserer datastrukturer og lagrede prosedyrer. Bygget feiler hvis koden ikke følger standarden, grønt bygg kreves for å flette til main, og en utrulling krever godkjenning fra to personer.",
+    },
+    tags: ["Azure DevOps", "Docker", "Linux", "CI/CD"],
+    detailPage: "/projects/dev-platform",
+    impact: {
+      en: "Designed and built, now running",
+      no: "Designet og bygget, i drift",
+    },
+  },
+  {
     id: "5",
     current: true,
     title: {
-      en: "Pelias Portal",
-      no: "Pelias Portal",
+      en: "Pelias Access Suite",
+      no: "Pelias Access Suite",
     },
     description: {
-      en: "An application portal that becomes the new front page for everyone logging in at Pelias: customers, field technicians, and backoffice alike. A personal, role-based dashboard puts every tool at most one click away, backed by a full authentication rewrite with two-factor login, self-service access requests, live health status for the underlying systems, and a shared audit log. Started as a pitch I wrote on my own initiative; management approved it and made me lead developer.",
-      no: "En applikasjonsportal som blir den nye forsiden for alle som logger inn hos Pelias: kunder, teknikere i felt og backoffice. Et personlig, rollebasert dashboard gjør at hvert verktøy er maks ett klikk unna, støttet av en full omskriving av autentiseringen med tofaktorinnlogging, selvbetjent tilgangsforespørsel, sanntids driftsstatus for underliggende systemer og en felles revisjonslogg. Startet som et forslag jeg skrev på eget initiativ; ledelsen vedtok det og ga meg rollen som hovedutvikler.",
+      en: "Pelias' new dashboard and shared login, built on a clear split between identity and access. Pelias ID is an OIDC login service on ASP.NET Identity and OpenIddict that answers only who you are and which tenants you belong to, as an employee, customer, or chain customer. The dashboard owns the application rights, with a rights model designed to carry over into the applications built on top. Includes two-factor login, self-service access requests, an admin panel, and an audit log. Started as a pitch I wrote on my own initiative; management approved it and made me lead developer.",
+      no: "Pelias' nye dashboard og felles innlogging, bygget på et tydelig skille mellom identitet og tilgang. Pelias ID er en OIDC-innloggingstjeneste på ASP.NET Identity og OpenIddict som kun svarer på hvem du er og hvilke tenants du tilhører, som ansatt, kunde eller kjedekunde. Dashboardet eier applikasjonsrettighetene, med en rettighetsmodell som skal følge med inn i applikasjonene som bygges videre. Omfatter tofaktorinnlogging, selvbetjent tilgangsforespørsel, adminpanel og revisjonslogg. Startet som et forslag jeg skrev på eget initiativ; ledelsen vedtok det og ga meg rollen som hovedutvikler.",
     },
-    tags: ["C#", ".NET 10", "Blazor", "Authentication"],
-    detailPage: "/projects/pelias-portal",
+    tags: ["C#", ".NET 10", "Blazor", "OIDC"],
+    detailPage: "/projects/pelias-access-suite",
     impact: {
       en: "My pitch → lead developer role",
       no: "Mitt forslag → hovedutviklerrolle",
@@ -42,14 +60,14 @@ export const projects: Project[] = [
       no: "E-posttjeneste",
     },
     description: {
-      en: "A standalone email engine that offloads a web server by moving email generation from legacy ASP Classic code into a modern C# service. Runs as a scheduled task with config-driven origins. Includes a web dashboard for statistics, searchable queue, and manual re-queuing. Eliminated over an hour of daily server hangs.",
-      no: "En frittstående e-postmotor som avlaster webserveren ved å flytte e-postgenerering fra gammel ASP Classic-kode inn i en moderne C#-tjeneste. Kjører som planlagt oppgave med konfigurasjonsdrevne kilder. Inkluderer et webdashboard for statistikk, søkbar kø og manuell re-køing. Fjernet over én time med daglig serverhenging.",
+      en: "A standalone email engine that offloads a web server by moving email generation from legacy ASP Classic code into a modern C# service. Runs as a scheduled task with config-driven origins. Includes a web dashboard for statistics, searchable queue, and manual re-queuing. Removed on average more than an hour of downtime a day.",
+      no: "En frittstående e-postmotor som avlaster webserveren ved å flytte e-postgenerering fra gammel ASP Classic-kode inn i en moderne C#-tjeneste. Kjører som planlagt oppgave med konfigurasjonsdrevne kilder. Inkluderer et webdashboard for statistikk, søkbar kø og manuell re-køing. Fjernet i snitt over en time nedetid hver dag.",
     },
     tags: ["C#", "ASP.NET Core", "MSSQL", "Automation"],
     detailPage: "/projects/email-worker",
     impact: {
-      en: "Eliminated 1h+ daily server downtime",
-      no: "Fjernet 1t+ daglig nedetid på server",
+      en: "Removed 1h+ of downtime a day on average",
+      no: "Fjernet i snitt 1t+ nedetid hver dag",
     },
   },
   {
